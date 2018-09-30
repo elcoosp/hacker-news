@@ -1,0 +1,3 @@
+export const FETCH_FEED_REQUEST = 'feed/FETCH_FEED_REQUEST'
+export const FETCH_FEED_RESPONSE = 'feed/FETCH_FEED_RESPONSE'
+export const FETCH_FEED_ERROR = 'feed/FETCH_FEED_ERROR'
