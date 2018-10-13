@@ -11,7 +11,7 @@ const App = () => (
 	<Provider store={store}>
 		<BrowserRouter>
 			<Fragment>
-				<Route exact path="/stories/:feed" component={StoriesFeed} />
+				<Route exact path="/stories/:feedName" component={StoriesFeed} />
 			</Fragment>
 		</BrowserRouter>
 	</Provider>
