@@ -20,9 +20,10 @@ export const getFeed = async feedName => {
 		)
 
 	const byIds = await once(db.ref(`/v0/${feedName}stories`))
-	const feed = await itemsByIds(byIds)
+	const all = await itemsByIds(byIds)
+
 	return {
 		byIds,
-		feed
+		all
 	}
 }
