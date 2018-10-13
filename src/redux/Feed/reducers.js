@@ -1,19 +1,22 @@
 import * as T from './types'
 
-const rootReducer = (
-	state = {
-		meta: { isFetching: false, error: '' },
-		feeds: { new: {}, top: {}, best: {} }
-	},
-	{ type, payload }
-) => {
+const initialState = {
+	meta: { isFetching: false, error: '' },
+	feeds: {
+		new: { all: [], byIds: [] },
+		top: { all: [], byIds: [] },
+		best: { all: [], byIds: [] }
+	}
+}
+
+const rootReducer = (state = initialState, { type, payload }) => {
 	switch (type) {
 		case T.FETCH_FEED_RESPONSE:
-			const { feedName, byIds, feed } = payload
+			const { feedName, byIds, all } = payload
 			return {
 				...state,
 				meta: { isFetching: false, error: '' },
-				feeds: { ...state.feeds, [feedName]: { byIds, feed } }
+				feeds: { ...state.feeds, [feedName]: { byIds, all } }
 			}
 		case T.FETCH_FEED_REQUEST:
 			return { ...state, meta: { isFetching: true } }
