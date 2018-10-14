@@ -1,6 +1,6 @@
 import * as T from './types'
 
-const initialState = {
+export const initialState = {
 	meta: { isFetching: false, error: '' },
 	feeds: {
 		new: { all: [], byIds: [] },

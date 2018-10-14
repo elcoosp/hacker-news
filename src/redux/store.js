@@ -14,6 +14,7 @@ const store = createStore(
 	rootReducer,
 	composeWithDevTools(applyMiddleware(sagaMiddleware, logger))
 )
+
 sagaMiddleware.run(feedSagas)
 
 export default store
